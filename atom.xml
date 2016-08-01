@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-01T02:26:56.000Z</updated>
+  <updated>2016-08-01T03:10:57.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/01/%E4%B8%8A%E6%9E%B6AppStore%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2016/08/01/上架AppStore的一些记录/</id>
     <published>2016-08-01T01:44:13.000Z</published>
-    <updated>2016-08-01T02:26:56.000Z</updated>
+    <updated>2016-08-01T03:10:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>Xcode&#x6A21;&#x62DF;&#x5668;&#x9009;&#x62E9;Generic iOS Device</p>
 <p>&#x70B9;&#x51FB;&#x83DC;&#x5355;&#x680F;product ~&gt; archive&#x6253;&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0A;&#x67B6;AppStore&#x4E0D;&#x63A8;&#x8350;&#x9009;&#x62E9;&#x53F3;&#x8FB9;&#x7684; upload to appstore&#x9009;&#x9879;&#xFF1B;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#xFF1A;<br>&#x5176;&#x4E00;&#xFF0C;&#x4E0A;&#x4F20;&#x901F;&#x5EA6;&#x582A;&#x5FE7;&#xFF1B;<br>&#x5176;&#x4E8C;&#xFF0C;&#x4E0A;&#x4F20;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x8FDB;&#x884C;&#x7EA0;&#x9519;&#x3002;</p>
