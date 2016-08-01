@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-01T01:21:51.000Z</updated>
+  <updated>2016-08-01T02:26:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,28 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Xcode插件使用</title>
-    <link href="http://yoursite.com/2016/08/01/Xcode%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2016/08/01/Xcode插件使用/</id>
-    <published>2016-08-01T00:51:45.000Z</published>
-    <updated>2016-08-01T01:21:51.000Z</updated>
+    <title>上架AppStore的一些记录</title>
+    <link href="http://yoursite.com/2016/08/01/%E4%B8%8A%E6%9E%B6AppStore%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2016/08/01/上架AppStore的一些记录/</id>
+    <published>2016-08-01T01:44:13.000Z</published>
+    <updated>2016-08-01T02:26:56.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Alcatraz-&#x7684;&#x5B89;&#x88C5;-&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;"><a href="#Alcatraz-&#x7684;&#x5B89;&#x88C5;-&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;" class="headerlink" title="Alcatraz &#x7684;&#x5B89;&#x88C5;(&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;)"></a>Alcatraz &#x7684;&#x5B89;&#x88C5;(&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;)</h3><p><strong>&#x5178;&#x578B;&#x7684;&#x5B89;&#x88C5;Alcatraz&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl&#xA0;-fsSL&#xA0;https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh&#xA0;|&#xA0;sh</div></pre></td></tr></table></figure></p>
-<p><strong>&#x5F53;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x91CD;&#x542F;Xcode&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x63D0;&#x793A; Alcatraz bundle&#x7684;&#x8B66;&#x793A;&#x6846;&#xFF1B;&#x70B9;&#x51FB; Load Bundle &#x7EE7;&#x7EED;&#xFF0C;&#x4EE5;&#x4FBF;xcode&#x80FD;&#x591F;&#x52A0;&#x8F7D;Alcatraz&#x63D2;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x8FD9;&#x4E2A;Alcatraz&#x63D2;&#x4EF6;&#x624D;&#x80FD;&#x8D77;&#x4F5C;&#x7528;</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#x6CE8;&#x610F;:&#x5982;&#x679C;&#x4F60;&#x4E00;&#x4E0D;&#x5C0F;&#x5FC3;&#x70B9;&#x51FB;&#x4E86;<span class="string">&quot;skip bundle&quot;</span>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x6765;&#x91CD;&#x65B0;&#x663E;&#x793A;&#x5B83;&#xFF01;</div><div class="line">defaults&#xA0;delete&#xA0;com.apple.dt.Xcode&#xA0;DVTPlugInManagerNonApplePlugIns-Xcode-7.2.1</div><div class="line">&#x4EE5;&#x4E0A;&#x7684;Xcode 7.2.1&#x662F;&#x4F60;&#x673A;&#x5B50;&#x4E0A;&#x7684;Xcode&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x4E0D;&#x662F;7.2.1&#xFF0C;&#x6539;&#x4E3A;&#x4F60;&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;&#x53F7;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</div></pre></td></tr></table></figure></p>
-<h3 id="ESJsonFormat-Xcode"><a href="#ESJsonFormat-Xcode" class="headerlink" title="ESJsonFormat-Xcode"></a>ESJsonFormat-Xcode</h3><p><strong>&#x5728;&#x5BF9;&#x5E94;&#x7684;model&#x7C7B;&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5FEB;&#x6377;&#x952E;(Control+Shift+J)-&#x8F93;&#x5165;JSON&#xFF0C;&#x6309;Enter&#x952E;&#xFF0C;&#x5373;&#x53EF;&#x751F;&#x6210;model&#x7C7B;</strong></p>
-<h3 id="HOStringSense"><a href="#HOStringSense" class="headerlink" title="HOStringSense"></a>HOStringSense</h3><p><strong>&#x53EF;&#x4EE5;&#x5728;&#x5F39;&#x51FA;&#x6846;&#x5199;NSString&#xFF0C;&#x6240;&#x89C1;&#x53CA;&#x6240;&#x5F97;</strong></p>
-<h3 id="Auto-Importer-for-Xcode"><a href="#Auto-Importer-for-Xcode" class="headerlink" title="Auto Importer for Xcode"></a>Auto Importer for Xcode</h3><p><strong>&#x9009;&#x4E2D;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6309;Ctrl+command+H&#x4F1A;&#x76F4;&#x63A5;&#x52A0;&#x5165;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4F9B;&#x9009;&#x62E9;</strong></p>
-<h3 id="ClangFormat-Xcode"><a href="#ClangFormat-Xcode" class="headerlink" title="ClangFormat-Xcode"></a>ClangFormat-Xcode</h3><p><strong>&#x5F3A;&#x5927;&#x7684;&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x5316;&#x5DE5;&#x5177;</strong></p>
-<h3 id="XAlign"><a href="#XAlign" class="headerlink" title="XAlign"></a>XAlign</h3><p><strong>&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x5316;&#x5BF9;&#x9F50;</strong></p>
-<h3 id="VVDocumenter"><a href="#VVDocumenter" class="headerlink" title="VVDocumenter"></a>VVDocumenter</h3><p><strong>&#x4E09;&#x201C;/&#x201D;&#x6572;&#x51FA;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;</strong></p>
-<h3 id="ZLGotoSandbox"><a href="#ZLGotoSandbox" class="headerlink" title="ZLGotoSandbox"></a>ZLGotoSandbox</h3><p><strong>&#x5FEB;&#x901F;&#x8BBF;&#x95EE;&#x6C99;&#x76D2;</strong></p>
-<h3 id="KSImageNamed"><a href="#KSImageNamed" class="headerlink" title="KSImageNamed"></a>KSImageNamed</h3><p><strong>&#x53EF;&#x89C6;&#x5316;image</strong></p>
-<h3 id="DXXcodeConsoleUnicodePlugin"><a href="#DXXcodeConsoleUnicodePlugin" class="headerlink" title="DXXcodeConsoleUnicodePlugin"></a>DXXcodeConsoleUnicodePlugin</h3><p><strong>dug&#x680F;&#x6253;&#x5370;&#x65F6;&#x81EA;&#x52A8;&#x628A;/ueo6&#x8F6C;&#x5316;&#x6210;&#x6C49;&#x5B57;</strong></p>
+    <content type="html"><![CDATA[<p>Xcode&#x6A21;&#x62DF;&#x5668;&#x9009;&#x62E9;Generic iOS Device</p>
+<p>&#x70B9;&#x51FB;&#x83DC;&#x5355;&#x680F;product ~&gt; archive&#x6253;&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0A;&#x67B6;AppStore&#x4E0D;&#x63A8;&#x8350;&#x9009;&#x62E9;&#x53F3;&#x8FB9;&#x7684; upload to appstore&#x9009;&#x9879;&#xFF1B;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#xFF1A;<br>&#x5176;&#x4E00;&#xFF0C;&#x4E0A;&#x4F20;&#x901F;&#x5EA6;&#x582A;&#x5FE7;&#xFF1B;<br>&#x5176;&#x4E8C;&#xFF0C;&#x4E0A;&#x4F20;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x8FDB;&#x884C;&#x7EA0;&#x9519;&#x3002;</p>
+<p>&#x5728;Xcode&#x4E0B;&#xFF0C;&#x9009;&#x62E9;open develop tool &#x4E0B;&#x7684;application loader &#x53CC;&#x51FB;&#x5DE6;&#x4FA7;&#x9009;&#x62E9;&#x672C;&#x5730;&#x5DF2;&#x7ECF;&#x751F;&#x6210;&#x7684;IPA&#x5305;&#x3002;</p>
+<p>&#x6210;&#x529F;&#x751F;&#x6210;&#x7684;IPA&#x540E;&#xFF0C;&#x8FDB;&#x5165;&#x5F00;&#x53D1;&#x8005;&#x4E2D;&#x5FC3;&#xFF0C;TunesConnect,&#x6211;&#x7684;APP&#xFF0C;&#x627E;&#x5230;&#x5BF9;&#x5E94;APP&#xFF0C;&#x53EF;&#x4EE5;&#x627E;&#x5230; &#x6784;&#x5EFA;&#x7248;&#x672C;&#x7684;&#x52A0;&#x53F7;&#x6309;&#x94AE;&#xFF0C;&#x70B9;&#x51FB;&#x5373;&#x53EF;&#x6DFB;&#x52A0;&#x4E4B;&#x524D;&#x4E0A;&#x4F20;&#x7684;APP&#xFF0C;&#x6784;&#x5EFA;&#x5B8C;&#x7248;&#x672C;&#x8BB0;&#x5F97;&#x7F16;&#x8F91;&#x4E0B;&#x65B9;&#x7684;&#xFF08;&#x5E94;&#x7528;&#xFF09;&#x5206;&#x7EA7;&#x6309;&#x94AE;&#xFF0C;&#x8FDB;&#x884C;APP&#x8BC4;&#x5206;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x786E;&#x5B9A;&#x54EA;&#x4E9B;&#x4E1C;&#x897F;&#x6CA1;&#x6709;&#x586B;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x70B9;&#x63D0;&#x4EA4;&#x5BA1;&#x6838;&#x8FDB;&#x884C;&#x4FE1;&#x606F;&#x9A8C;&#x8BC1;&#x3002;</p>
+<p>&#x5C4F;&#x5E55;&#x5FEB;&#x7167;&#x56FE;&#x7247;&#xFF0C;&#x9009;&#x62E9;&#x6A21;&#x62DF;&#x5668;commend+s&#x5C31;&#x53EF;&#x4EE5;&#x622A;&#x56FE;&#x4E86;&#xFF0C;&#x4E0D;&#x8FC7;&#x8BB0;&#x5F97;&#x8C03;&#x6574;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;&#x4E3A;100%&#xFF0C;&#x622A;&#x56FE;&#x65F6;&#x6309;&#x5C3A;&#x5BF8;&#x5206;&#x7C7B;&#x4E00;&#x5757;&#x4E00;&#x5757;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>APP&#x63CF;&#x8FF0;&#xFF0C;&#x6700;&#x597D;&#x627E;&#x5230;&#x8BE5;&#x9879;&#x76EE;&#x5EFA;&#x8BBE;&#x76EE;&#x7684;&#xFF0C;&#x53C2;&#x8003;&#x5EFA;&#x8BBE;&#x76EE;&#x7684;&#x4E66;&#x5199;&#x3002;</p>
+<p>&#x4E0A;&#x4F20;&#x5B8C;IPA&#x5230;AppStore&#x65E2;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x4E86;&#xFF0C;&#x6CE8;&#x610F;&#x7248;&#x672C;&#x53F7;&#x3002;</p>
+<p>APP&#x7EFC;&#x5408;&#x4FE1;&#x606F;&#x6CE8;&#x610F;&#x8981;&#x5BF9;&#x5E94;&#x7528;&#x8FDB;&#x884C;&#x5206;&#x7EA7;&#xFF1B;&#x5E94;&#x7528;&#x56FE;&#x6807;&#x9700;&#x8981;&#x4E00;&#x5F20;1024*1024&#x50CF;&#x7D20;&#x7684;&#x56FE;&#x6807;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x6709;alpha&#x901A;&#x9053;&#x7B49;&#x3002;</p>
+<p>APP&#x5BA1;&#x6838;&#x4FE1;&#x606F;&#x4E0B;&#xFF0C;&#x8054;&#x7CFB;&#x4FE1;&#x606F;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#x586B;&#x5199;&#x7684;&#xFF0C;&#x53E6;&#x5916;&#x9700;&#x8981;&#x8D26;&#x53F7;&#x624D;&#x80FD;&#x8FDB;&#x5165;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x6CE8;&#x610F;&#x7ED9;&#x51FA;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x4FE1;&#x606F;&#x3002;</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Alcatraz-&amp;#x7684;&amp;#x5B89;&amp;#x88C5;-&amp;#x5305;&amp;#x7BA1;&amp;#x7406;&amp;#x5DE5;&amp;#x5177;&quot;&gt;&lt;a href=&quot;#Alcatraz-&amp;#x7684;&amp;#x5B89;&amp;#x88C5;-&amp;#x5305;&amp;#x7
+      &lt;p&gt;Xcode&amp;#x6A21;&amp;#x62DF;&amp;#x5668;&amp;#x9009;&amp;#x62E9;Generic iOS Device&lt;/p&gt;
+&lt;p&gt;&amp;#x70B9;&amp;#x51FB;&amp;#x83DC;&amp;#x5355;&amp;#x680F;product ~&amp;gt; archive&amp;#x62
+    
+    </summary>
+    
+      <category term="xcode" scheme="http://yoursite.com/categories/xcode/"/>
+    
+    
+      <category term="xcode" scheme="http://yoursite.com/tags/xcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Xcode插件使用</title>
+    <link href="http://yoursite.com/2016/08/01/Xcode%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/08/01/Xcode插件使用/</id>
+    <published>2016-08-01T00:51:45.000Z</published>
+    <updated>2016-08-01T01:35:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Alcatraz-&#x7684;&#x5B89;&#x88C5;-&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;"><a href="#Alcatraz-&#x7684;&#x5B89;&#x88C5;-&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;" class="headerlink" title="Alcatraz &#x7684;&#x5B89;&#x88C5;(&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;)"></a>Alcatraz &#x7684;&#x5B89;&#x88C5;(&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;)</h2><p><strong>&#x5178;&#x578B;&#x7684;&#x5B89;&#x88C5;Alcatraz&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl&#xA0;-fsSL&#xA0;https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh&#xA0;|&#xA0;sh</div></pre></td></tr></table></figure></p>
+<p><strong>&#x5F53;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x91CD;&#x542F;Xcode&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x63D0;&#x793A; Alcatraz bundle&#x7684;&#x8B66;&#x793A;&#x6846;&#xFF1B;&#x70B9;&#x51FB; Load Bundle &#x7EE7;&#x7EED;&#xFF0C;&#x4EE5;&#x4FBF;xcode&#x80FD;&#x591F;&#x52A0;&#x8F7D;Alcatraz&#x63D2;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x8FD9;&#x4E2A;Alcatraz&#x63D2;&#x4EF6;&#x624D;&#x80FD;&#x8D77;&#x4F5C;&#x7528;</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#x6CE8;&#x610F;:&#x5982;&#x679C;&#x4F60;&#x4E00;&#x4E0D;&#x5C0F;&#x5FC3;&#x70B9;&#x51FB;&#x4E86;<span class="string">&quot;skip bundle&quot;</span>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x6765;&#x91CD;&#x65B0;&#x663E;&#x793A;&#x5B83;&#xFF01;</div><div class="line">defaults&#xA0;delete&#xA0;com.apple.dt.Xcode&#xA0;DVTPlugInManagerNonApplePlugIns-Xcode-7.2.1</div><div class="line">&#x4EE5;&#x4E0A;&#x7684;Xcode 7.2.1&#x662F;&#x4F60;&#x673A;&#x5B50;&#x4E0A;&#x7684;Xcode&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x4E0D;&#x662F;7.2.1&#xFF0C;&#x6539;&#x4E3A;&#x4F60;&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;&#x53F7;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</div></pre></td></tr></table></figure></p>
+<h2 id="ESJsonFormat-Xcode"><a href="#ESJsonFormat-Xcode" class="headerlink" title="ESJsonFormat-Xcode"></a>ESJsonFormat-Xcode</h2><p><strong>&#x5728;&#x5BF9;&#x5E94;&#x7684;model&#x7C7B;&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5FEB;&#x6377;&#x952E;(Control+Shift+J)-&#x8F93;&#x5165;JSON&#xFF0C;&#x6309;Enter&#x952E;&#xFF0C;&#x5373;&#x53EF;&#x751F;&#x6210;model&#x7C7B;</strong></p>
+<h2 id="HOStringSense"><a href="#HOStringSense" class="headerlink" title="HOStringSense"></a>HOStringSense</h2><p><strong>&#x53EF;&#x4EE5;&#x5728;&#x5F39;&#x51FA;&#x6846;&#x5199;NSString&#xFF0C;&#x6240;&#x89C1;&#x53CA;&#x6240;&#x5F97;</strong></p>
+<h2 id="Auto-Importer-for-Xcode"><a href="#Auto-Importer-for-Xcode" class="headerlink" title="Auto Importer for Xcode"></a>Auto Importer for Xcode</h2><p><strong>&#x9009;&#x4E2D;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6309;Ctrl+command+H&#x4F1A;&#x76F4;&#x63A5;&#x52A0;&#x5165;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4F9B;&#x9009;&#x62E9;</strong></p>
+<h2 id="ClangFormat-Xcode"><a href="#ClangFormat-Xcode" class="headerlink" title="ClangFormat-Xcode"></a>ClangFormat-Xcode</h2><p><strong>&#x5F3A;&#x5927;&#x7684;&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x5316;&#x5DE5;&#x5177;</strong></p>
+<h2 id="XAlign"><a href="#XAlign" class="headerlink" title="XAlign"></a>XAlign</h2><p><strong>&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x5316;&#x5BF9;&#x9F50;</strong></p>
+<h2 id="VVDocumenter"><a href="#VVDocumenter" class="headerlink" title="VVDocumenter"></a>VVDocumenter</h2><p><strong>&#x4E09;&#x201C;/&#x201D;&#x6572;&#x51FA;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;</strong></p>
+<h2 id="ZLGotoSandbox"><a href="#ZLGotoSandbox" class="headerlink" title="ZLGotoSandbox"></a>ZLGotoSandbox</h2><p><strong>&#x5FEB;&#x901F;&#x8BBF;&#x95EE;&#x6C99;&#x76D2;</strong></p>
+<h2 id="KSImageNamed"><a href="#KSImageNamed" class="headerlink" title="KSImageNamed"></a>KSImageNamed</h2><p><strong>&#x53EF;&#x89C6;&#x5316;image</strong></p>
+<h2 id="DXXcodeConsoleUnicodePlugin"><a href="#DXXcodeConsoleUnicodePlugin" class="headerlink" title="DXXcodeConsoleUnicodePlugin"></a>DXXcodeConsoleUnicodePlugin</h2><p><strong>dug&#x680F;&#x6253;&#x5370;&#x65F6;&#x81EA;&#x52A8;&#x628A;/ueo6&#x8F6C;&#x5316;&#x6210;&#x6C49;&#x5B57;</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Alcatraz-&amp;#x7684;&amp;#x5B89;&amp;#x88C5;-&amp;#x5305;&amp;#x7BA1;&amp;#x7406;&amp;#x5DE5;&amp;#x5177;&quot;&gt;&lt;a href=&quot;#Alcatraz-&amp;#x7684;&amp;#x5B89;&amp;#x88C5;-&amp;#x5305;&amp;#x7
     
     </summary>
     
