@@ -122,26 +122,6 @@
   </entry>
   
   <entry>
-    <title>测试</title>
-    <link href="http://yoursite.com/2016/07/29/%E6%B5%8B%E8%AF%95/"/>
-    <id>http://yoursite.com/2016/07/29/测试/</id>
-    <published>2016-07-29T08:12:27.000Z</published>
-    <updated>2016-07-29T09:18:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>&#x6D4B;&#x8BD5;<br><img src="/2016/07/29/&#x6D4B;&#x8BD5;/91c276e9aed6d85d5cfb6c3edecf5e60.jpg" alt="&#x6D4B;&#x8BD5;&#x56FE;&#x7247;"></p>
-<img src="/2016/07/29/&#x6D4B;&#x8BD5;/2016/07/29/&#x6D4B;&#x8BD5;/91c276e9aed6d85d5cfb6c3edecf5e60.jpg" alt="This is an example image" title="This is an example image">
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;#x6D4B;&amp;#x8BD5;&lt;br&gt;&lt;img src=&quot;/2016/07/29/&amp;#x6D4B;&amp;#x8BD5;/91c276e9aed6d85d5cfb6c3edecf5e60.jpg&quot; alt=&quot;&amp;#x6D4B;&amp;#x8BD5;&amp;#x56FE;&amp;#x7247;&quot;&gt;&lt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>结合Xcode进行工程项目管理</title>
     <link href="http://yoursite.com/2016/07/29/%E7%BB%93%E5%90%88Xcode%E8%BF%9B%E8%A1%8C%E5%B7%A5%E7%A8%8B%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
     <id>http://yoursite.com/2016/07/29/结合Xcode进行工程项目管理/</id>
