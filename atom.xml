@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-10T08:27:25.000Z</updated>
+  <updated>2016-08-10T09:09:53.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL的四种连接-左外连接、右外连接、内连接、全连接</title>
+    <link href="http://yoursite.com/2016/08/10/SQL%E7%9A%84%E5%9B%9B%E7%A7%8D%E8%BF%9E%E6%8E%A5-%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5%E3%80%81%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5%E3%80%81%E5%86%85%E8%BF%9E%E6%8E%A5%E3%80%81%E5%85%A8%E8%BF%9E%E6%8E%A5/"/>
+    <id>http://yoursite.com/2016/08/10/SQL的四种连接-左外连接、右外连接、内连接、全连接/</id>
+    <published>2016-08-10T09:06:19.000Z</published>
+    <updated>2016-08-10T09:09:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>a&#x8868;     id   name     b&#x8868;     id   job   parent_id<br>              1   &#x5F20;3                   1     23     1<br>              2   &#x674E;&#x56DB;                 2     34     2<br>              3   &#x738B;&#x6B66;                 3     34     4       </p>
+<h2 id="a-id&#x540C;parent-id-&#x5B58;&#x5728;&#x5173;&#x7CFB;"><a href="#a-id&#x540C;parent-id-&#x5B58;&#x5728;&#x5173;&#x7CFB;" class="headerlink" title="  a.id&#x540C;parent_id   &#x5B58;&#x5728;&#x5173;&#x7CFB;   "></a>  a.id&#x540C;parent_id   &#x5B58;&#x5728;&#x5173;&#x7CFB;   </h2><p> 1&#xFF09; &#x5185;&#x8FDE;&#x63A5;<br>  select a.<em>,b.</em> from a inner join b on a.id=b.parent_id<br>  &#x7ED3;&#x679C;&#x662F;<br>  1   &#x5F20;3                   1     23     1<br>  2   &#x674E;&#x56DB;                  2     34     2   </p>
+<p>  2&#xFF09;&#x5DE6;&#x8FDE;&#x63A5;<br>  select a.<em>,b.</em> from a left join b on a.id=b.parent_id<br>  &#x7ED3;&#x679C;&#x662F;<br>  1   &#x5F20;3                   1     23     1<br>  2   &#x674E;&#x56DB;                  2     34     2<br>  3   &#x738B;&#x6B66;                  null   </p>
+<p> 3&#xFF09; &#x53F3;&#x8FDE;&#x63A5;<br>  select a.<em>,b.</em> from a right join b on a.id=b.parent_id<br>  &#x7ED3;&#x679C;&#x662F;<br>  1   &#x5F20;3                   1     23     1<br>  2   &#x674E;&#x56DB;                  2     34     2<br>  null                       3     34     4   </p>
+<p> 4&#xFF09; &#x5B8C;&#x5168;&#x8FDE;&#x63A5;<br>  select a.<em>,b.</em> from a full join b on a.id=b.parent_id<br>  &#x7ED3;&#x679C;&#x662F;<br>  1   &#x5F20;3                  1     23     1<br>  2   &#x674E;&#x56DB;                 2     34     2<br>  null               &#x3000;&#x3000;  3     34     4<br>  3   &#x738B;&#x6B66;                 null</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;a&amp;#x8868;     id   name     b&amp;#x8868;     id   job   parent_id&lt;br&gt;              1   &amp;#x5F20;3                   1     23     1&lt;br&gt;       
+    
+    </summary>
+    
+      <category term="database" scheme="http://yoursite.com/categories/database/"/>
+    
+    
+      <category term="database" scheme="http://yoursite.com/tags/database/"/>
+    
+  </entry>
   
   <entry>
     <title>MyBatis中Like语句使用方式</title>
