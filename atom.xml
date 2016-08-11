@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-11T02:24:39.000Z</updated>
+  <updated>2016-08-11T03:56:42.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS沙盒和文件基本操作</title>
+    <link href="http://yoursite.com/2016/08/11/iOS%E6%B2%99%E7%9B%92%E5%92%8C%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2016/08/11/iOS沙盒和文件基本操作/</id>
+    <published>2016-08-11T03:50:11.000Z</published>
+    <updated>2016-08-11T03:56:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="iOS&#x6C99;&#x76D2;"><a href="#iOS&#x6C99;&#x76D2;" class="headerlink" title="iOS&#x6C99;&#x76D2;"></a>iOS&#x6C99;&#x76D2;</h3><p>&#x9664;&#x7279;&#x6B8A;&#x60C5;&#x51B5;,&#x5E94;&#x7528;&#x53EA;&#x80FD;&#x8BBF;&#x95EE;&#x5E94;&#x7528;&#x672C;&#x8EAB;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;,&#x5373;&#x5B83;&#x7684;&#x6C99;&#x76D2;,&#x5E94;&#x7528;&#x4EA7;&#x751F;&#x7684;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x4FDD;&#x5B58;&#x5728;&#x6C99;&#x76D2;&#x76EE;&#x5F55;&#x4E0B;,<br>&#x6BCF;&#x4E2A;&#x6C99;&#x76D2;&#x4E0B;&#x6709;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#x5939; Documents, Library &#x548C; tmp , Library&#x5305;&#x542B; Caches , Cookies &#x548C; Preferences &#x76EE;&#x5F55;,<br><img src="/2016/08/11/iOS&#x6C99;&#x76D2;&#x548C;&#x6587;&#x4EF6;&#x57FA;&#x672C;&#x64CD;&#x4F5C;/111111.jpg" alt=""></p>
+<p>&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// &#x83B7;&#x53D6;&#x6C99;&#x76D2;&#x4E3B;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</div><div class="line">NSString *homeDir = NSHomeDirectory();</div><div class="line">// &#x83B7;&#x53D6;Documents&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</div><div class="line">NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];</div><div class="line">// &#x83B7;&#x53D6;Library&#x7684;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</div><div class="line">NSString *libDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];</div><div class="line">// &#x83B7;&#x53D6;Caches&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</div><div class="line">NSString *cachesDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];</div><div class="line">// &#x83B7;&#x53D6;tmp&#x76EE;&#x5F55;&#x8DEF;&#x5F84;</div><div class="line">NSString *tmpDir =  NSTemporaryDirectory();</div><div class="line">NSLog(@<span class="string">&quot;\n%@\n\n%@\n\n%@\n\n%@\n\n%@&quot;</span>,homeDir,docDir,libDir,cachesDir,tmpDir);</div></pre></td></tr></table></figure></p>
+<p><img src="/2016/08/11/iOS&#x6C99;&#x76D2;&#x548C;&#x6587;&#x4EF6;&#x57FA;&#x672C;&#x64CD;&#x4F5C;/222222.jpg" alt=""></p>
+<p>Documents&#xFF1A;&#x82F9;&#x679C;&#x5EFA;&#x8BAE;&#x5C06;&#x7A0B;&#x5E8F;&#x521B;&#x5EFA;&#x4EA7;&#x751F;&#x7684;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x5E94;&#x7528;&#x6D4F;&#x89C8;&#x4EA7;&#x751F;&#x7684;&#x6587;&#x4EF6;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;iTunes&#x5907;&#x4EFD;&#x548C;&#x6062;&#x590D;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5305;&#x62EC;&#x6B64;&#x76EE;&#x5F55;<br>Library&#xFF1A;&#x5B58;&#x50A8;&#x7A0B;&#x5E8F;&#x7684;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x6216;&#x5176;&#x5B83;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#xFF1B;<br>Library/Caches&#xFF1A;&#x5B58;&#x653E;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#xFF0C;&#x4FDD;&#x5B58;&#x5E94;&#x7528;&#x7684;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#xFF0C;&#x7528;&#x4E8E;&#x5E94;&#x7528;&#x5347;&#x7EA7;&#x6216;&#x8005;&#x5E94;&#x7528;&#x5173;&#x95ED;&#x540E;&#x7684;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#xFF0C;&#x4E0D;&#x4F1A;&#x88AB;itunes&#x540C;&#x6B65;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x540C;&#x6B65;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5C06;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x6587;&#x4EF6;&#x800C;&#x53C8;&#x4E0D;&#x9700;&#x8981;&#x5907;&#x4EFD;&#x7684;&#x6587;&#x4EF6;&#x653E;&#x5230;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x3002;<br>tmp&#xFF1A;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5373;&#x65F6;&#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x4F46;&#x4E0D;&#x9700;&#x8981;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x5728;&#x5E94;&#x7528;&#x5173;&#x95ED;&#x540E;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6570;&#x636E;&#x5C06;&#x5220;&#x9664;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x7CFB;&#x7EDF;&#x5728;&#x7A0B;&#x5E8F;&#x4E0D;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x6E05;&#x9664;&#x3002;</p>
+<h3 id="&#x6587;&#x4EF6;&#x57FA;&#x672C;&#x64CD;&#x4F5C;"><a href="#&#x6587;&#x4EF6;&#x57FA;&#x672C;&#x64CD;&#x4F5C;" class="headerlink" title="&#x6587;&#x4EF6;&#x57FA;&#x672C;&#x64CD;&#x4F5C;"></a>&#x6587;&#x4EF6;&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h3><h4 id="&#x521B;&#x5EFA;&#x6587;&#x4EF6;"><a href="#&#x521B;&#x5EFA;&#x6587;&#x4EF6;" class="headerlink" title="&#x521B;&#x5EFA;&#x6587;&#x4EF6;"></a>&#x521B;&#x5EFA;&#x6587;&#x4EF6;</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">NSString&#xA0;*documentsPath&#xA0;= [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];&#xA0;&#xA0;</div><div class="line">NSString&#xA0;*<span class="built_in">test</span>Directory&#xA0;=&#xA0;[documentsPath&#xA0;stringByAppendingPathComponent:@<span class="string">&quot;test&quot;</span>];&#xA0;&#xA0;</div><div class="line">NSFileManager&#xA0;*fileManager&#xA0;=&#xA0;[NSFileManager&#xA0;defaultManager];&#xA0;&#xA0;</div><div class="line">NSString&#xA0;*<span class="built_in">test</span>Path&#xA0;=&#xA0;[<span class="built_in">test</span>Directory&#xA0;stringByAppendingPathComponent:@<span class="string">&quot;test.txt&quot;</span>];&#xA0;&#xA0;</div><div class="line">BOOL&#xA0;res=[fileManager&#xA0;createFileAtPath:<span class="built_in">test</span>Path&#xA0;contents:nil&#xA0;attributes:nil];&#xA0;&#xA0;</div><div class="line"><span class="keyword">if</span>&#xA0;(res)&#xA0;{&#xA0;&#xA0;</div><div class="line">&#xA0;&#xA0;&#xA0;NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x6210;&#x529F;:&#xA0;%@&quot;</span>&#xA0;,<span class="built_in">test</span>Path);&#xA0;&#xA0;</div><div class="line">}<span class="keyword">else</span>&#xA0;&#xA0;</div><div class="line">&#xA0;&#xA0;&#xA0;NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x5931;&#x8D25;&quot;</span>);&#xA0;&#xA0;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h4 id="&#x5199;&#x6570;&#x636E;&#x5230;&#x6587;&#x4EF6;"><a href="#&#x5199;&#x6570;&#x636E;&#x5230;&#x6587;&#x4EF6;" class="headerlink" title="&#x5199;&#x6570;&#x636E;&#x5230;&#x6587;&#x4EF6;"></a>&#x5199;&#x6570;&#x636E;&#x5230;&#x6587;&#x4EF6;</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">NSString&#xA0;*<span class="built_in">test</span>Directory&#xA0;=&#xA0;[documentsPath&#xA0;stringByAppendingPathComponent:@<span class="string">&quot;test&quot;</span>];&#xA0;&#xA0;</div><div class="line">NSString&#xA0;*<span class="built_in">test</span>Path&#xA0;=&#xA0;[<span class="built_in">test</span>Directory&#xA0;stringByAppendingPathComponent:@<span class="string">&quot;test.txt&quot;</span>];&#xA0;&#xA0;</div><div class="line">NSString&#xA0;*content=@<span class="string">&quot;&#x6D4B;&#x8BD5;&#x5199;&#x5165;&#x5185;&#x5BB9;&#xFF01;&quot;</span>;&#xA0;&#xA0;</div><div class="line">BOOL&#xA0;res=[content&#xA0;writeToFile:<span class="built_in">test</span>Path&#xA0;atomically:YES&#xA0;encoding:NSUTF8StringEncoding&#xA0;error:nil];&#xA0;&#xA0;</div><div class="line"><span class="keyword">if</span>&#xA0;(res)&#xA0;{&#xA0;&#xA0;</div><div class="line">&#xA0;&#xA0;&#xA0;NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x6210;&#x529F;&quot;</span>);&#xA0;&#xA0;</div><div class="line">}<span class="keyword">else</span>&#xA0;&#xA0;</div><div class="line">&#xA0;&#xA0;&#xA0;NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x5931;&#x8D25;&quot;</span>);&#xA0;&#xA0;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h4 id="&#x8BFB;&#x6587;&#x4EF6;&#x6570;&#x636E;"><a href="#&#x8BFB;&#x6587;&#x4EF6;&#x6570;&#x636E;" class="headerlink" title="&#x8BFB;&#x6587;&#x4EF6;&#x6570;&#x636E;"></a>&#x8BFB;&#x6587;&#x4EF6;&#x6570;&#x636E;</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">NSString&#xA0;*<span class="built_in">test</span>Directory&#xA0;=&#xA0;[documentsPath&#xA0;stringByAppendingPathComponent:@<span class="string">&quot;test&quot;</span>];&#xA0;&#xA0;</div><div class="line">NSString&#xA0;*<span class="built_in">test</span>Path&#xA0;=&#xA0;[<span class="built_in">test</span>Directory&#xA0;stringByAppendingPathComponent:@<span class="string">&quot;test.txt&quot;</span>];&#xA0;&#xA0;</div><div class="line">//&#xA0;&#xA0;&#xA0;&#xA0;NSData&#xA0;*data&#xA0;=&#xA0;[NSData&#xA0;dataWithContentsOfFile:<span class="built_in">test</span>Path];&#xA0;&#xA0;</div><div class="line">//&#xA0;&#xA0;&#xA0;&#xA0;NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x6210;&#x529F;:&#xA0;%@&quot;</span>,[[NSString&#xA0;alloc]&#xA0;initWithData:data&#xA0;encoding:NSUTF8StringEncoding]);&#xA0;&#xA0;</div><div class="line">NSString&#xA0;*content=[NSString&#xA0;stringWithContentsOfFile:<span class="built_in">test</span>Path&#xA0;encoding:NSUTF8StringEncoding&#xA0;error:nil];&#xA0;&#xA0;</div><div class="line">NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x6210;&#x529F;:&#xA0;%@&quot;</span>,content);</div></pre></td></tr></table></figure>
+<h4 id="&#x6587;&#x4EF6;&#x5C5E;&#x6027;"><a href="#&#x6587;&#x4EF6;&#x5C5E;&#x6027;" class="headerlink" title="&#x6587;&#x4EF6;&#x5C5E;&#x6027;"></a>&#x6587;&#x4EF6;&#x5C5E;&#x6027;</h4><pre><code class="bash">NSString *<span class="built_in">test</span>Directory = [documentsPath stringByAppendingPathComponent:@<span class="string">&quot;test&quot;</span>];  
+NSFileManager *fileManager = [NSFileManager defaultManager];  
+NSString *<span class="built_in">test</span>Path = [<span class="built_in">test</span>Directory stringByAppendingPathComponent:@<span class="string">&quot;test.txt&quot;</span>];  
+NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:<span class="built_in">test</span>Path error:nil];     
+NSArray *keys;  
+id key, value;  
+keys = [fileAttributes allKeys];  
+int count = [keys count];  
+<span class="keyword">for</span> (int i = 0; i &lt; count; i++)  {  
+   key = [keys objectAtIndex: i];  
+   value = [fileAttributes objectForKey: key];  
+   NSLog (@<span class="string">&quot;Key: %@ for value: %@&quot;</span>, key, value);  
+}
+</code></pre>
+<h4 id="&#x5220;&#x9664;&#x6587;&#x4EF6;"><a href="#&#x5220;&#x9664;&#x6587;&#x4EF6;" class="headerlink" title="&#x5220;&#x9664;&#x6587;&#x4EF6;"></a>&#x5220;&#x9664;&#x6587;&#x4EF6;</h4><pre><code class="bash">NSString *<span class="built_in">test</span>Directory = [documentsPath stringByAppendingPathComponent:@<span class="string">&quot;test&quot;</span>];  
+NSFileManager *fileManager = [NSFileManager defaultManager];  
+NSString *<span class="built_in">test</span>Path = [<span class="built_in">test</span>Directory stringByAppendingPathComponent:@<span class="string">&quot;test.txt&quot;</span>];     
+BOOL res=[fileManager removeItemAtPath:<span class="built_in">test</span>Path error:nil];  
+<span class="keyword">if</span> (res) {  
+   NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x5220;&#x9664;&#x6210;&#x529F;&quot;</span>);  
+}<span class="keyword">else</span>  
+    NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x5220;&#x9664;&#x5931;&#x8D25;&quot;</span>);     
+    NSLog(@<span class="string">&quot;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;: %@&quot;</span>,[fileManager isExecutableFileAtPath:<span class="built_in">test</span>Path]?@<span class="string">&quot;YES&quot;</span>:@<span class="string">&quot;NO&quot;</span>);  
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;iOS&amp;#x6C99;&amp;#x76D2;&quot;&gt;&lt;a href=&quot;#iOS&amp;#x6C99;&amp;#x76D2;&quot; class=&quot;headerlink&quot; title=&quot;iOS&amp;#x6C99;&amp;#x76D2;&quot;&gt;&lt;/a&gt;iOS&amp;#x6C99;&amp;#x76D2;&lt;/h3&gt;&lt;p&gt;&amp;#
+    
+    </summary>
+    
+      <category term="ios" scheme="http://yoursite.com/categories/ios/"/>
+    
+    
+      <category term="ios" scheme="http://yoursite.com/tags/ios/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS的单例模式（singleton）</title>
