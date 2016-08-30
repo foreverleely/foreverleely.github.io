@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-29T10:06:32.000Z</updated>
+  <updated>2016-08-30T02:58:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UITableViewCell 左滑操作</title>
+    <link href="http://yoursite.com/2016/08/30/UITableViewCell-%E5%B7%A6%E6%BB%91%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2016/08/30/UITableViewCell-左滑操作/</id>
+    <published>2016-08-30T02:46:20.000Z</published>
+    <updated>2016-08-30T02:58:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x5173;&#x4E8E; UITableViewCell &#x7684;&#x5DE6;&#x6ED1;&#x51FA;&#x73B0;&#x7684;&#x5220;&#x9664;&#x6309;&#x94AE;&#x9700;&#x6C42;,&#x5728;2015&#x5E74;&#x5C31;&#x6709;&#x8981;&#x6C42;&#x8FC7;,&#x53BB;&#x5B9E;&#x73B0;,&#x65F6;&#x9694;&#x4E00;&#x5E74;&#x8D76;&#x7D27;&#x8865;&#x4E0A;&#x3002;<br>&#x9996;&#x5148; iOS &#x9ED8;&#x8BA4;&#x7684;&#x5DE6;&#x6ED1;&#x5220;&#x9664;&#x6309;&#x94AE;&#x662F;&#x4E00;&#x4E2A;&#x56FE;&#x6807;,&#x57FA;&#x672C;&#x4E0D;&#x7B26;&#x5408;&#x8BBE;&#x8BA1;&#x8981;&#x6C42;,&#x6240;&#x4EE5;&#x4E00;&#x822C; UI &#x4E0A;&#x8981;&#x6C42;&#x6539;&#x8FDB;,<br>iOS8 &#x4E4B;&#x540E;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x4EC5;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x5373;&#x53EF;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#pragma mark - iOS8 cell&#x6ED1;&#x52A8;&#x64CD;&#x4F5C;</span></div><div class="line">- (NSArray&lt;UITableViewRowAction *&gt; *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {</div><div class="line"></div><div class="line">    UITableViewRowAction *likeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@<span class="string">&quot;&#x559C;&#x6B22;&quot;</span> handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {</div><div class="line">        // &#x5B9E;&#x73B0;&#x76F8;&#x5173;&#x7684;&#x903B;&#x8F91;&#x4EE3;&#x7801;</div><div class="line">        // ...</div><div class="line">        // &#x5728;&#x6700;&#x540E;&#x5E0C;&#x671B;cell&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x56DE;&#x5230;&#x9ED8;&#x8BA4;&#x72B6;&#x6001;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x9000;&#x51FA;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;</div><div class="line">        tableView.editing = NO;</div><div class="line">    }];</div><div class="line"></div><div class="line">    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@<span class="string">&quot;&#x5220;&#x9664;&quot;</span> handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {</div><div class="line">        // &#x9996;&#x5148;&#x6539;&#x53D8;model</div><div class="line">        // &#x4E00;&#x5B9A;&#x4E3B;&#x8981;&#x8981;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x6E90;,&#x4EE5;&#x514D; tableview &#x66F4;&#x65B0;&#x51FA;&#x73B0;&#x884C;&#x6570;&#x4E0D;&#x5BF9;&#x5E94;&#x7684;&#x95EE;&#x9898;</div><div class="line">        [self.dataArr removeObjectAtIndex:indexPath.row];</div><div class="line">        // &#x63A5;&#x7740;&#x5237;&#x65B0;view</div><div class="line">        [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];</div><div class="line">        // &#x4E0D;&#x9700;&#x8981;&#x4E3B;&#x52A8;&#x9000;&#x51FA;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#xFF0C;&#x4E0A;&#x9762;&#x66F4;&#x65B0;view&#x7684;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x9000;&#x51FA;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;</div><div class="line">    }];</div><div class="line"></div><div class="line">    <span class="built_in">return</span> @[deleteAction, likeAction];</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<p>iOS7 &#x53CA;&#x4E4B;&#x524D;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#pragma mark - iOS7 cell&#x6ED1;&#x52A8;&#x64CD;&#x4F5C;</span></div><div class="line">-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath</div><div class="line">{</div><div class="line">    <span class="built_in">return</span> UITableViewCellEditingStyleDelete;</div><div class="line">}</div><div class="line"></div><div class="line">/*&#x6539;&#x53D8;&#x5220;&#x9664;&#x6309;&#x94AE;&#x7684;title*/</div><div class="line">-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath</div><div class="line">{</div><div class="line">    <span class="built_in">return</span> @<span class="string">&quot;&#x5220;&#x9664;&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line">/*&#x5220;&#x9664;&#x7528;&#x5230;&#x7684;&#x51FD;&#x6570;*/</div><div class="line">-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle <span class="keyword">for</span>RowAtIndexPath:(NSIndexPath *)indexPath</div><div class="line">{</div><div class="line">    <span class="keyword">if</span> (editingStyle == UITableViewCellEditingStyleDelete)</div><div class="line">    {</div><div class="line">        /*&#x6B64;&#x5904;&#x5904;&#x7406;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x5220;&#x9664;&#x6570;&#x636E;*/</div><div class="line">        [self.dataArr removeObjectAtIndex:indexPath.row];</div><div class="line">        /*&#x5220;&#x9664;tableView&#x4E2D;&#x7684;&#x4E00;&#x884C;*/</div><div class="line">        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<p>&#x5982;&#x679C;&#x8981;&#x8003;&#x8651;&#x7248;&#x672C;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;,&#x4E0D;&#x59A8;&#x5C06;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x653E;&#x5728;&#x4E00;&#x8D77;,&#x4EB2;&#x6D4B;&#x6709;&#x6548;&#x3002;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x5173;&amp;#x4E8E; UITableViewCell &amp;#x7684;&amp;#x5DE6;&amp;#x6ED1;&amp;#x51FA;&amp;#x73B0;&amp;#x7684;&amp;#x5220;&amp;#x9664;&amp;#x6309;&amp;#x94AE;&amp;#x9700;&amp;#x6C42;,&amp;#x5728
+    
+    </summary>
+    
+      <category term="ios" scheme="http://yoursite.com/categories/ios/"/>
+    
+    
+      <category term="ios" scheme="http://yoursite.com/tags/ios/"/>
+    
+  </entry>
   
   <entry>
     <title>UIViewControllerAnimatedTransitioning和动画切换</title>
