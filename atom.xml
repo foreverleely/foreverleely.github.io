@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-14T07:55:38.000Z</updated>
+  <updated>2016-09-26T11:57:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ionic下使用iOS Camera</title>
+    <link href="http://yoursite.com/2016/09/26/ionic%E4%B8%8B%E4%BD%BF%E7%94%A8iOS-Camera/"/>
+    <id>http://yoursite.com/2016/09/26/ionic下使用iOS-Camera/</id>
+    <published>2016-09-26T11:25:40.000Z</published>
+    <updated>2016-09-26T11:57:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x5728;&#x521B;&#x5EFA;&#x597D; ionic &#x9879;&#x76EE;,&#x5E76;&#x6DFB;&#x52A0;&#x4E86;&#x57FA;&#x672C;&#x7684; cordova &#x63D2;&#x4EF6;&#x540E;</p>
+<h3 id="&#x5B89;&#x88C5;-cordova-&#x76F8;&#x673A;&#x63D2;&#x4EF6;&#x548C;-ngCordova"><a href="#&#x5B89;&#x88C5;-cordova-&#x76F8;&#x673A;&#x63D2;&#x4EF6;&#x548C;-ngCordova" class="headerlink" title="&#x5B89;&#x88C5; cordova &#x76F8;&#x673A;&#x63D2;&#x4EF6;&#x548C; ngCordova"></a>&#x5B89;&#x88C5; cordova &#x76F8;&#x673A;&#x63D2;&#x4EF6;&#x548C; ngCordova</h3><p>&#x8981;&#x4F7F;&#x7528; iOS Camera &#x9700;&#x8981;&#x6DFB;&#x52A0; cordova &#x76F8;&#x673A;&#x63D2;&#x4EF6;&#x548C; ngCordova &#x8FD9;&#x4E2A;&#x7C7B;&#x5E93;,<br>&#x5B89;&#x88C5; cordova &#x76F8;&#x673A;&#x63D2;&#x4EF6;<br>cordova plugin add org.apache.cordova.camera<br>&#x5B89;&#x88C5; ngCordova<br>&#x5B89;&#x88C5;&#x8FD9;&#x4E2A;&#x7C7B;&#x5E93;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; bower &#x5DE5;&#x5177;, bower &#x5B89;&#x88C5;<br>npm install -g bower<br>&#x6CE8;&#x610F;,&#x5207;&#x6362;&#x5230; ionic &#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;,&#x5B89;&#x88C5; ngCordova<br>bower install ngCordova</p>
+<h3 id="&#x6DFB;&#x52A0;&#x7C7B;&#x5F15;&#x7528;"><a href="#&#x6DFB;&#x52A0;&#x7C7B;&#x5F15;&#x7528;" class="headerlink" title="&#x6DFB;&#x52A0;&#x7C7B;&#x5F15;&#x7528;"></a>&#x6DFB;&#x52A0;&#x7C7B;&#x5F15;&#x7528;</h3><p>&#x5728; index.html &#x91CC;&#x7684;&#x4E0B;&#x9762;&#x8FD9;&#x53E5;&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5F15;&#x5165;</p>
+<p><script src="cordova.js"></script><br>&#x5F15;&#x5165;</p>
+<p><script src="lib/ngCordova/dist/ng-cordova.js"></script><br>&#x5728; app.js &#x4E2D;&#x52A0;&#x5165; ngCordova<br>angular.module(&#x2018;starter&#x2019;, [&#x2018;ionic&#x2019;, &#x2018;starter.controllers&#x2019;, &#x2018;starter.services&#x2019;, &#x2018;ngCordova&#x2019;])<br>&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684; config.xml &#x4E2D;,&#x6BD4;&#x8F83;&#x52A0;&#x5165;&#x7F3A;&#x5C11;&#x7684;&#x63D2;&#x4EF6;<br><!-- Core plugins --></p>
+<p><plugin name="cordova-plugin-battery-status"></plugin></p>
+<p><plugin name="cordova-plugin-camera"></plugin></p>
+<p><plugin name="cordova-plugin-media-capture"></plugin></p>
+<p><plugin name="cordova-plugin-console"></plugin></p>
+<p><plugin name="cordova-plugin-contacts"></plugin></p>
+<p><plugin name="cordova-plugin-device"></plugin></p>
+<p><plugin name="cordova-plugin-device-motion"></plugin></p>
+<p><plugin name="cordova-plugin-device-orientation"></plugin></p>
+<p><plugin name="cordova-plugin-dialogs"></plugin></p>
+<p><plugin name="cordova-plugin-file"></plugin></p>
+<p><plugin name="cordova-plugin-file-transfer"></plugin></p>
+<p><plugin name="cordova-plugin-geolocation"></plugin></p>
+<p><plugin name="cordova-plugin-globalization"></plugin></p>
+<p><plugin name="cordova-plugin-inappbrowser"></plugin></p>
+<p><plugin name="cordova-plugin-media"></plugin></p>
+<p><plugin name="cordova-plugin-network-information"></plugin></p>
+<p><plugin name="cordova-plugin-splashscreen"></plugin></p>
+<p><plugin name="cordova-plugin-vibration"></plugin></p>
+<h3 id="ionic-&#x4E0B;-iOS-Camera-&#x7684;&#x8C03;&#x7528;"><a href="#ionic-&#x4E0B;-iOS-Camera-&#x7684;&#x8C03;&#x7528;" class="headerlink" title="ionic &#x4E0B; iOS Camera &#x7684;&#x8C03;&#x7528;"></a>ionic &#x4E0B; iOS Camera &#x7684;&#x8C03;&#x7528;</h3><p>.controller(&#x2018;AddressEditCtrl&#x2019;, function($scope, $cordovaCamera) {</p>
+<p>  $scope.takephotoimage = &#x201C;img/address/address_person.jpg&#x201D;;</p>
+<p>  $scope.takePicture = function() {</p>
+<pre><code>var options = {
+  quality : 100, //&#x62CD;&#x7167;&#x4FDD;&#x5B58;&#x7684;&#x7167;&#x7247;&#x6E05;&#x6670;&#x5EA6;,0~100,100&#x6700;&#x4F73;
+  destinationType : Camera.DestinationType.DATA_URL, //&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x5F62;&#x5F0F;,&#x8FD9;&#x91CC;&#x662F;&#x7528;&#x7684;&#x662F;base64&#x7F16;&#x7801;&#x683C;&#x5F0F;
+  sourceType : Camera.PictureSourceType.CAMERA, //&#x8BBE;&#x7F6E;&#x7167;&#x7247;&#x7684;&#x8D44;&#x6E90;
+  allowEdit : true, //&#x9009;&#x62E9;&#x7167;&#x7247;&#x94B1;&#x662F;&#x5426;&#x53EF;&#x7F16;&#x8F91;
+  encodingType: Camera.EncodingType.JPEG, //&#x8FD4;&#x56DE;&#x7684;&#x56FE;&#x6807;&#x7684;&#x662F;&#x4E2A;,&#x8FD9;&#x91CC;&#x662F;jpeg&#x683C;&#x5F0F;
+  targetWidth: 50, //&#x7167;&#x7247;&#x50CF;&#x7D20;
+  targetHeight: 50,
+  mediaType: 0, //&#x5A92;&#x4F53;&#x7C7B;&#x578B;
+  popoverOptions: CameraPopoverOptions,
+  saveToPhotoAlbum: false //&#x662F;&#x5426;&#x4FDD;&#x5B58;&#x7167;&#x7247;&#x5230;&#x672C;&#x5730;
+};
+
+$cordovaCamera.getPicture(options).then(function(imageData) {
+  $scope.imgURI = &quot;data:image/jpeg;base64,&quot; + imageData;
+  console.log(&quot;&#x62CD;&#x7167; 1 &quot;+$scope.imgURI);
+  $scope.takephotoimage = &quot;data:image/jpeg;base64,&quot; + imageData;
+}, function(err) {
+  // An error occured. Show a message to the user
+  console.log(&quot;&#x62CD;&#x7167; 2 &quot;+err);
+});
+
+// $cordovaCamera.getPicture(options).then(function(imageURI) {
+//   // var image = document.getElementById(&apos;myImage&apos;);
+//   console.log(&quot;&#x62CD;&#x7167; &quot;+imageURI);
+//   $scope.takephotoimage = imageURI;
+// }, function(err) {
+//   // error
+// });
+</code></pre><p>  }</p>
+<p>})<br>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x5728;function&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x52A0;&#x5165; $cordovaCamera &#x53C2;&#x6570;,&#x8FD9;&#x91CC;&#x6211;&#x662F;&#x901A;&#x8FC7; &#x201C;&#x201C;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7ED9; img &#x52A8;&#x6001;&#x6DFB;&#x52A0; src,<br>&#x5728; AddressEditCtrl &#x4E0B;,&#x9700;&#x8981;&#x4F7F;&#x7528;&#x76F8;&#x673A;&#x7684;&#x5730;&#x65B9;,&#x53EA;&#x9700;&#x8981;&#x8C03;&#x7528; takePicture() &#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x3002;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x5728;&amp;#x521B;&amp;#x5EFA;&amp;#x597D; ionic &amp;#x9879;&amp;#x76EE;,&amp;#x5E76;&amp;#x6DFB;&amp;#x52A0;&amp;#x4E86;&amp;#x57FA;&amp;#x672C;&amp;#x7684; cordova &amp;#x63D2;&amp;#x4EF6;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ionic和cordova的简单尝试</title>
