@@ -709,7 +709,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://yoursite.com/categories/HEXO/"/>
     
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
