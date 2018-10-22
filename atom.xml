@@ -434,7 +434,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Database" scheme="http://yoursite.com/categories/Database/"/>
+      <category term="Database" scheme="http://yoursite.com/categories/database/"/>
     
     
       <category term="Database" scheme="http://yoursite.com/tags/Database/"/>
@@ -463,7 +463,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Database" scheme="http://yoursite.com/categories/Database/"/>
+      <category term="Database" scheme="http://yoursite.com/categories/database/"/>
     
     
       <category term="Database" scheme="http://yoursite.com/tags/Database/"/>
@@ -536,7 +536,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Xcode" scheme="http://yoursite.com/categories/Xcode/"/>
+      <category term="Xcode" scheme="http://yoursite.com/categories/xcode/"/>
     
     
       <category term="Xcode" scheme="http://yoursite.com/tags/Xcode/"/>
@@ -569,7 +569,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Xcode" scheme="http://yoursite.com/categories/Xcode/"/>
+      <category term="Xcode" scheme="http://yoursite.com/categories/xcode/"/>
     
     
       <category term="Xcode" scheme="http://yoursite.com/tags/Xcode/"/>
@@ -593,7 +593,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Github" scheme="http://yoursite.com/categories/Github/"/>
+      <category term="Github" scheme="http://yoursite.com/categories/github/"/>
     
     
       <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
@@ -658,7 +658,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Objc" scheme="http://yoursite.com/categories/Objc/"/>
+      <category term="Objc" scheme="http://yoursite.com/categories/objc/"/>
     
     
       <category term="Objc" scheme="http://yoursite.com/tags/Objc/"/>
@@ -709,7 +709,7 @@ $cordovaCamera.getPicture(options).then(function(imageData) {
     
     </summary>
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/HEXO/"/>
+      <category term="Hexo" scheme="http://yoursite.com/categories/hexo/"/>
     
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
